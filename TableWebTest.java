@@ -22,6 +22,7 @@ public class TableWebTest {
     void setUp(){
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--headless=new");
+
         driver = new ChromeDriver(chromeOptions);
         driver.get("https://the-internet.herokuapp.com/tables");
 

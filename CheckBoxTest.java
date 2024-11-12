@@ -6,9 +6,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class CheckBoxTest {
+    WebDriver driver;
+    @BeforeClass
+    void setUp(){
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless=new");
+        driver = new ChromeDriver(chromeOptions);
+    }
     @Test
     void checkBoxTickWithHeadless() {
         ChromeOptions chromeOptions = new ChromeOptions();
